@@ -5,51 +5,21 @@
 html, body{
     width: 100%;
     height: 100%;
-    background-color: #233995;
 }
 header{
     width: 100%;
     height: 80px;
-    background-color: #156F88;
     color: whitesmoke; 
     border-radius: 0px 0px 30px 30px;
+    position: absolute;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-image: -webkit-linear-gradient(left, #156F88 18%, #1E0651 100%)
 }
-@media(max-width: 1549px){
-    header{ 
-        height: 120px;
-    }
-}
-@media(max-width: 959px){
-    header{
-        height: 200px;
-    }
-    #logo{
-        position: absolute;
-        margin-top: 20px;
-    }
-    #menu{
-        margin-top: 80px;
-    }
-}
-@media(max-width: 639px){
-    header{
-        height: 310px;
-    }
-    #logo{
-        position: absolute;
-        margin-top: 40px;
-    }
-    #menu{
-        margin-top: 130px;
-    }
-}
-
 #menu{
-    height: 80px;
+    height: 100px;
     width: 1500px;
     display: flex;
     flex-direction: row;
@@ -58,11 +28,81 @@ header{
 }
 .class{
     text-align: center;
-    padding-top: 7px; 
-    font-size: 1.5em;
-    background-color: #DBA11C;
+    padding-top: 15px; 
+    font-size: 1.6em;
+    background-image: -webkit-linear-gradient(top left, #E7BE5D 10%, #93793D 90%);
     margin: 10px;   
-    width: 300px;
-    height: 30px;
+    width: 310px;
+    height: 45px;
     border-radius: 1.5em;
+}
+
+.prelude{
+    position:  absolute;
+    margin: 15% 0% 0% 24.999%;
+    width: 50%;
+    text-align: center;
+}
+.preface{
+    text-align: center;
+    margin: 25px;
+    font-size: 34px;
+    color: white;
+}
+#realm{
+    width: 550px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 30px;
+}
+#button{
+    width: 350px;
+    height: 40px; 
+    border-radius: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-image: -webkit-linear-gradient(top, #445BBA 0%, #6842BA 100%);
+    border: 1px solid #233995;
+}
+main{
+    background-image: url();
+    background-blend-mode: multiply;
+    background-color: #233995;
+    width: 100%;
+    height: 1045px;
+}
+@media(max-width: 1799px){
+    header{ 
+        height: 160px;
+        background-image: -webkit-linear-gradient(top, #156F88 45%, #1E0651 100%)
+    }
+}
+@media(max-width: 989px){
+    header{
+        height: 240px;
+    }
+    #logo{
+        position: absolute;
+        margin-top: 20px;
+    }
+    #menu{
+        height: 80px;
+        margin-top: 80px;
+    }
+}
+@media(max-width: 659px){
+    header{
+        height: 370px;
+    }
+    #logo{
+        position: absolute;
+        margin-top: 40px;
+    }
+    #menu{
+        height: 80px;
+        margin-top: 130px;
+    }
 }
