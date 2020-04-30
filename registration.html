@@ -18,13 +18,14 @@
         </div>
     </header>
     <main>
-        <div class="indent" id="prelude">
+        <div class="reg_indent" id="prelude">
             <form class="gameEntry" action="backend/action.php" method="POST">
-                <p class="preface">Ваш e.mail:</p><br><input type="email" id="realm" name="gameEntryEmail">
-                <p class="preface">Ваш пароль:</p><br><input type="password" id="realm" name="gameEntryPassword">
+                <p class="preface">Ваш e.mail:</p><br><input type="email" class="reg_realm" id="realm" name="gameEntryEmail">
+                <p class="preface">Ваш пароль:</p><br><input type="password" id="realm" class="reg_realm" name="gameEntryPassword">
+                <p class="preface">Повторите ввод пароля:</p><br><input type="password" id="realm" class="reg_realm" name="gameEntryPasswordCheck">
                 <div class="fix">
-                    <input type="submit" value="Войти" class="button"><br>
-                    <a href="registration.html"><input type="button" value="Регистрация" class="button"></a>
+                    <input type="submit" value="Регистрация" class="button"><br>
+                    <a href="index.html"><input type="button" value="Авторизация" class="button"></a>
                 </div>
             </form>
         </div>

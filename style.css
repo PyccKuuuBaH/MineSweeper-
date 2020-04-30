@@ -36,9 +36,9 @@ header{
     height: 45px;
     border-radius: 1.5em;
 }
-.prelude{
-    position:  absolute;
-    margin-top: 20%;  
+.indent{padding-top: 23%;}
+.reg_indent{padding-top: 15%;}
+#prelude{
     width: 50%;
     text-align: center;
     display: flex;
@@ -47,6 +47,7 @@ header{
     flex-wrap: wrap ;
 }
 .gameEntry{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,7 +66,7 @@ header{
     text-align: center;
     font-size: 30px;
 }
-#button{
+.button{
     width: 40vw;
     height: 60px; 
     border-radius: 30px;
@@ -103,9 +104,6 @@ main{
         margin: 15px;
         font-size: 30px;
     }
-    /*.prelude{
-        margin-top: 400px;
-    }*/
     main{
         height: 110%;
     }
@@ -115,9 +113,6 @@ main{
         height: 240px;
         border-radius: 0px 0px 80px 80px;
     }
-    /*.prelude{
-        margin-top: 70%;
-    }*/
     .preface{
         margin: 10px;
         font-size: 24px;
@@ -139,13 +134,10 @@ main{
     }
 }
 @media(max-width: 659px){
-    /*.prelude{
-        margin-top: 100%;
-    }*/
-    .preface{
-        margin: 10px;
-        font-size: 1.5em;
-    }
+    .indent{ padding-top: 105%; }
+    .reg_indent{ padding-top: 78%; }
+    .preface{ margin: 0px;
+        font-size: 1.5em;}
     header{
         height: 310px;
         border-radius: 0px 0px 50px 50px;
@@ -169,6 +161,6 @@ main{
         font-size: 18px;
     }
     main{
-        height: 130%;
+        min-height: 100%;
     }
 }
