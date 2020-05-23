@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Pictures/condition/icon.ico" type="image/x-icon">
+    <meta name="keywords" content="Сапёр, игра, мины, взрыв, флажки, карты">
+    <title>MineSweeper</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="logo"><img src="лого.png"></div>
+        <div id="menu">
+            <div class="class">Главная</div>
+            <div class="class">Статистика</div>
+            <div class="class">О нас</div>
+        </div>
+    </header>
+    <main class="startMain" id="main">
+        <div class="prelude">
+            <div class="form">
+                <p>Ваш e.mail:</p><input type="email" class="realm" id="regEmail" name="gameEntryEmail" placeholder="ваш e.mail:">
+                <p>Ваш логин:</p><input type="text" class="realm" id="regLogin" name="gameEntryLogin" placeholder="ваш логин:">
+                <p>Ваш пароль:</p><input type="password" class="realm" id="regPassword" name="gameEntryPassword" placeholder="ваш пароль:">
+                <div id="fork">
+                    <button onclick="startRegistration()" class="button">Регистрация</button>
+                    <a href="authorization.html"><button class="button">Авторизация</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+// функция регистрации. Начало. 
+    async function startRegistration(){
+        let email = document.getElementById("email").value;
+        let login = document.getElementById("login").value;
+        let password = document.getElementById("password").value;
+        let sending = await fetch("http://backend/registraction.php?email=" + email + "&&login=" + login + "&&pass=" + password),
+        out = (await sending.text());
+        let checkResult = checking();
+        if (email != "" && login != "" && password != "" && checkResult != 1){
+            Swal.fire({
+                icon: "successful",
+                title: "Регистрация прошла успешно",
+                timer: 1500
+            })
+        } else {
+            Swal.fire({
+                icon: "fail",
+                title: "Произошла ошибка при вводе данных",
+                timer: 1500
+            })
+            delete sending;
+            delete out;
+        }
+    }
+// функция регистрации. Конец
+// функция проверки на существующий профиль. Начало.
+    async function checking() {
+        let reading = await fetch("http://backend/autorizaction.php?email=" + localStorage.getItem("email") + "&&login=" + localStorage.getItem("login") + "&&pass=" + localStorage.getItem("pass")),
+        auto = (await reading.text())
+        if (auto != "null") {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+// Функция проверки на существующий профиль. Конец.
+</script>
+</html>

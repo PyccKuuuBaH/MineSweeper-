@@ -15,6 +15,7 @@ header{ width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
     background-image: -webkit-linear-gradient(left, #156F88 18%, #1E0651 100%) }
+/* Стили для файла "index.php" */
 /* Стили для меню */
 #menu{ height: 100px;
     width: 1500px;
@@ -32,6 +33,9 @@ header{ width: 100%;
     height: 45px;
     border-radius: 1.5em;
 }
+.class:hover{
+    background-image: -webkit-linear-gradient(right, #7656BA 10%, #452096 90%);
+}
 /* Стили для блока управления всем контентом на осн. странице */
 .prelude{ padding-top: 7%; 
     margin: 2vh; 
@@ -45,11 +49,11 @@ header{ width: 100%;
     flex-wrap: wrap ;
 }
 .realm{ width: 49.9vw;
-    margin: 2vh;
-    height: 40px;
-    border-radius: 20px;
+    margin: 2.75%;
+    height: 60px;
+    border-radius: 30px;
     text-align: center;
-    font-size: 32px;
+    font-size: 30px;
 }
 #datafield{ width: 100%;
     display: flex;
@@ -61,27 +65,117 @@ header{ width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around; }
-#button{ width: 59vw;
+.button{ width: 59vw;
     margin: 2vh;
     height: 60px; 
+    cursor: pointer;
     border-radius: 30px;
     margin-top: 1vh;
     font-size: 20px;
     text-align: center;
     color: white;
     background-image: -webkit-linear-gradient(top, #445BBA 0%, #6842BA 100%);
-    border: 1px solid #233995;
-}
-main{ background-image: url("Pictures/backgrounds/desktop/19201080.png");
+    border: 1px solid #233995;}
+/* Особые стили для каждой страницы сайта */
+.startMain{ background-image: url("background/blue.jpg");
     background-blend-mode: multiply;
     background-color: #233995;
-    min-width: 100%;
+    background-position: center;}
+.authoMain{ background-image: url("background/blue2.jpg");
+    background-blend-mode: multiply;
+    background-color: #233995;
+    background-position: center;}
+.forkMain { background-image: url("background/violet.jpg");
+    background-blend-mode: multiply;
+    background-color: #403064;
+    background-position: center;}
+.gameMain{ background-image: url("background/red.jpg");
+    background-blend-mode: multiply;
+    background-color: #811313;
+    background-position: center; }
+/* Единый стиль для всех страниц сайта */
+#main{min-width: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap ;}
+/* Стили для файла "fork.html" */
+/* Стили для кнопки по центру экрана */
+.gameStart{
+    width: 300px;
+    height: 90px;
+    background-image: -webkit-linear-gradient(top, #156F88 10%, #043A49 90%);
+    font-size: 30px;
+    color: #E7B541;
+    text-align: center;
+    border-radius: 2.6em;
+    margin-left: 1%;
+    padding-top: 40px;
+    margin-top: 17%;
+}
+.gameStart:hover{
+    background-image: -webkit-linear-gradient(top, #7656BA  10%, #061550 90%);
+    color: rgb(231, 118, 65);
+}
+.gameStart:active{
+    background-image: -webkit-linear-gradient(bottom, #452096  30%, #043A49 100%);
+    color: rgb(231, 118, 65);
+}
+/* Стили для подвала страницы */
+/* Основное тело подвала */
+.footer{
+    width: 100%;
+    height: 8em;
+    border-radius: 40px 40px 0px 0px ;
+    margin-top: 20%;
+    border-radius: 40px, 40px, 0px, 0px;
+    background-image: -webkit-linear-gradient(right, #452096  30%, #156F88 100%);
+    
+    text-align: center;
+}
+/* Стили для группы кнопок */
+.difficultySetup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap ;
 }
+/* Стили для каждой кнопки отдельно */
+.diffMode{
+    width: 310px;
+    margin: 10px;   
+    height: 1.6em;
+    padding-top: 0.7%;
+    margin-top: 1.1% !important; 
+    border-radius: 2em;
+    text-align: center;
+    font-size: 26px;
+    background-image: -webkit-linear-gradient(bottom right, #E7BE5D 10%, #93793D 90%);
+    color: whitesmoke;
+}
+.diffMode:hover{
+    background-image: -webkit-linear-gradient(right, #7656BA 10%, #452096 90%);
+}
+/* Стили для надписей в подвале сайта и на главной кнопке */
+.jSomeWords{
+    color: #E7BE5D;
+    font-size: 36px;
+}
+.jSomeWords a{
+    text-decoration: none;
+    color: #E7BE5D;
+}
+/* Стили для файла "game.html" */
+/* Стили для основного игрового поля */
+.playground{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border: 1px solid black;}
+/* Открыть с помощью live server и доделать*/
+
+/* Режимы под различные устройства */
 @media(max-width: 1799px){
     .prelude{ padding-top: 15%;}
     header{ height: 160px;
@@ -93,6 +187,7 @@ main{ background-image: url("Pictures/backgrounds/desktop/19201080.png");
         font-size: 24px; }
     .preface{ margin: 15px;
         font-size: 30px; }
+    .gameStart{margin-top: 26%;}
 }
 @media(max-width: 989px){
     .prelude{ padding-top: 36%;}
@@ -106,6 +201,10 @@ main{ background-image: url("Pictures/backgrounds/desktop/19201080.png");
         margin-top: 100px; }
     .class{ height: 40px;
         padding-top: 12px; }
+    .gameStart{margin-top: 41%;}
+    .playground{
+        width: 576px;
+        height: 576px;}
 }
 @media(max-width: 659px){
     .prelude{ padding-top: 93%;}
@@ -123,4 +222,9 @@ main{ background-image: url("Pictures/backgrounds/desktop/19201080.png");
         height: 30px;
         border-radius: 15px;
         font-size: 18px; }
+    .gameStart{margin-top: 105vw;
+    }
+    .playground{
+        width: 256px;
+        height: 256px;}
 }
