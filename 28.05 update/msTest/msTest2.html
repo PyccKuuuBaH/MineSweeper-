@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFunction(x, y) {
+  if (x.matches) { // Если медиа запрос совпадает
+    document.body.style.backgroundColor = "yellow";
+  } else if (y.matches) {
+    document.body.style.backgroundColor = "pink";
+  }
+  else{
+    document.body.style.backgroundColor = "green";
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)");
+var y = window.matchMedia("(min-width: 1000px)") // Вызов функции прослушивателя во время выполнения
+x.addListener(myFunction) // Присоединить функцию прослушивателя при изменении состояния
+y.addListener(myFunction)
+myFunction(x, y)
+    </script>
+</body>
+</html>
+let phoneDisplay = window.matchMedia("max-width: 639px");
+        let tabletDisplay = window.matchMedia("max-width: 959px");
+        let desktopDisplay = window.matchMedia("max-width: 1799px");
+        displayControl(phoneDisplay, tabletDisplay, desktopDisplay);
+        phoneDisplay.addListener(displayControl);
+        tabletDisplay.addListener(displayControl);
+        desktopDisplay.addListener(displayControl);
+        function displayControl(p, t, d){
+            if(p.matches){
+            } else if(t.matches){
+            } else if(d.matches){
+            }
+        }
+    } else if(d.matches){
